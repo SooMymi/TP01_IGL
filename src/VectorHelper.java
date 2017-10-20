@@ -23,10 +23,7 @@ public class VectorHelper {
 		/*******************************************************************/
 		//Sommer deux vecteurs
 		  // une exception si les deux vecteurs ont des tailles diff�rentes
-		/*class TDiffException extends Exception{
-	     public void TaillesDiff(java.lang.String[] args){
-		 System.out.println("les deux vecteurs ont des tailles diff�rentes!!");}}//la somme
-	  */   
+		 
 		public static  void somme(int[] tab1 , int[] tab2) throws TDiffException{
 			if (tab1.length != tab2.length) {
 				throw new TDiffException();
@@ -37,10 +34,16 @@ public class VectorHelper {
 				System.out.println("la somme des elements >> " +somme ); }}
 		/*******************************************************************/
 		//Inverser les �l�ments d�un vecteur
-		public int[] inverse(int[] tab){
-			int i=0 ,j=tab.length,t;
-			while (i<j){t=tab[i];tab[i]=tab[j];tab[j]=t;i++;j--;}
-			return tab;}
+		public static void inverse(int[] tab){
+			int i=0 ,j=(tab.length-1),t,k;
+			while (i<j){t=tab[i];
+			tab[i]=tab[j];
+			tab[j]=t;
+			i++;j--;
+			}
+			for (i=0;i<tab.length;i++){System.out.println(tab[i]);}
+			//return tab;
+			}
 		/*******************************************************************/
 		//Obtenir simultan�ment le minimum et le maximum d�un vecteur
 
@@ -93,7 +96,18 @@ public class VectorHelper {
 	            	   somme(tab1 ,tab2);
 	            }else throw new TDiffException();
 	            	break;
-	            case (3):  break;
+	            case (3):
+	            	
+	             	System.out.println("le nombre d'elements du vecteur");
+	            Scanner nbv= new Scanner(System.in); 
+	            int n = nbv.nextInt(); int[] tab1 = new int[n];
+	            System.out.println(" Remplir le  vect");
+            	for (int i=0;i<n;i++){
+      	            		Scanner e= new Scanner(System.in);
+            		int ee = e.nextInt(); tab1[i]=ee;}
+            	inverse (tab1);
+	            break;
+	            
 	            case (4):  break;
 	            case (5):  break;
 	        }}
