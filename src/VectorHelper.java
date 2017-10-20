@@ -5,20 +5,17 @@ public class VectorHelper {
 
 	
 	
-	
-	
-
 		//Trier les �l�ments d�un vecteur
 		
 		public static void TriVec(int[] tab  ){
-			int[] TabTri = new int[tab.length];
+			/*int[] TabTri = new int[tab.length];
 			int i=0 ,min,j = 0;
 			for (i=0;i<=tab.length;i++){
 				min = tab[i]; j =i+1;
 				while (j<=tab.length){
 					if (min>tab[j]){ min = tab[j] ; TabTri[i]=min; } j++;}
 				}
-			for (j=0;j<(TabTri.length);j++){System.out.println(TabTri[j]);}
+			for (j=0;j<(TabTri.length);j++){System.out.println(TabTri[j]);}*/
 			}
 		/*******************************************************************/
 		//Sommer deux vecteurs
