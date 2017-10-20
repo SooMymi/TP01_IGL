@@ -47,11 +47,11 @@ public class VectorHelper {
 		/*******************************************************************/
 		//Obtenir simultan�ment le minimum et le maximum d�un vecteur
 
-		public int  minmax(int[] tab){
-			int min=0,max=0,i;
+		public static void minmax(int[] tab){
+			int min=tab[0],max=tab[0],i;
 			for(i=0;i<tab.length;i++){if (tab[i]<min) min=tab[i]; if(tab[i]>max) max=tab[i]; }
-			System.out.println(min );System.out.println(max );
-			return(0);}
+			System.out.println(" le min >>  "+min );System.out.println(" le max >>  "+max );
+			}
 		
 
 		
@@ -108,7 +108,16 @@ public class VectorHelper {
             	inverse (tab1);
 	            break;
 	            
-	            case (4):  break;
+	            case (4):  
+	            	System.out.println("le nombre d'elements du vecteur");
+	            Scanner nbm= new Scanner(System.in); 
+	            int m = nbm.nextInt(); int[] tab2 = new int[m];
+	            System.out.println(" Remplir le  vect");
+            	for (int i=0;i<m;i++){
+      	            		Scanner e= new Scanner(System.in);
+            		int ee = e.nextInt(); tab2[i]=ee;}
+            	minmax(tab2);
+	            	break;
 	            case (5):  break;
 	        }}
 
