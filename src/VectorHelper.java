@@ -13,21 +13,28 @@ public class VectorHelper {
 	}
 	 
 	 /**
-	  * Trier les elements d un vecteur
+	  * Trier les elements d un vecteur ( tri par bulle) 
 	  * @param tab 
 	  *      le vecteur qui va etre trie*/
 		
-		
-		public static void TriVec(int[] tab  ){
-			int[] TabTri = new int[tab.length];
-			int i=0 ,min,j = 0;
-			for (i=0;i<=tab.length;i++){
-				min = tab[i]; j =i+1;
-				while (j<=tab.length){
-					if (min>tab[j]){ min = tab[j] ; TabTri[i]=min; } j++;}
-				}
-			for (j=0;j<(TabTri.length);j++){System.out.println(TabTri[j]);}
-			}
+	 static void TriVec(int[] tab)
+	 {
+	     boolean tab_en_ordre = false;
+	     int taille = tab.length , k;
+	     while(!tab_en_ordre)
+	     {
+	         tab_en_ordre = true;
+	         for(int i=0 ; i < taille-1 ; i++)
+	         {
+	             if(tab[i] > tab[i+1])
+	             {    k = tab[i]; tab[i]=tab[i+1]; tab[i+1]=k;  
+	                  tab_en_ordre = false;
+	             }
+	         }
+	         taille--;
+	     }
+	     for (int i=0;i<tab.length;i++){System.out.println(tab[i]);}
+	 }
 		  
 		/**
 		 *Sommer deux vecteurs 
