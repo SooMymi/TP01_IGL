@@ -1,3 +1,5 @@
+package Mypackage;
+
 import java.util.Scanner;
 
 import vh.TDiffException;
@@ -17,7 +19,7 @@ public class VectorHelper {
 	  * @param tab 
 	  *      le vecteur qui va etre trie*/
 		
-	 static void TriVec(int[] tab)
+	 public static int[] TriVec(int[] tab)
 	 {
 	     boolean tab_en_ordre = false;
 	     int taille = tab.length , k;
@@ -33,7 +35,8 @@ public class VectorHelper {
 	         }
 	         taille--;
 	     }
-	     for (int i=0;i<tab.length;i++){System.out.println(tab[i]);}
+	    // for (int i=0;i<tab.length;i++){System.out.println(tab[i]);}
+	     return tab;
 	 }
 		  
 		/**
@@ -91,22 +94,24 @@ public class VectorHelper {
 		public static void main(String[] args) throws Exception {
 
 			System.out.println("Choisissez une operation :  \n");
-			System.out.println(" [1] . Trier les Ã©lÃ©ments dâ€™un vecteur \n");
+			System.out.println(" [1] . Trier les éléments d’un vecteur \n");
 			System.out.println(" [2] . Sommer deux vecteurs\n");
-			System.out.println(" [3] . Inverser les Ã©lÃ©ments dâ€™un vecteur\n");
-			System.out.println(" [4] . Obtenir le minimum et le maximum dâ€™un vecteur\n");
-			System.out.println(" [5] . Appliquer une formule Ã  tous les Ã©lÃ©ments dâ€™un vecteur\n");
+			System.out.println(" [3] . Inverser les éléments d’un vecteur\n");
+			System.out.println(" [4] . Obtenir le minimum et le maximum d’un vecteur\n");
+			System.out.println(" [5] . Appliquer une formule à tous les éléments d’un vecteur\n");
 			Scanner sc = new Scanner(System.in); int sc1 = sc.nextInt();
 			switch (sc1){
 			
 			    case (1):
+			    	int i;
 			    	System.out.println("le nombre d'elements dans le vecteur");
 			        Scanner nb = new Scanner(System.in); int nbr = nb.nextInt();
 	                int[] tab = new int[nbr];
-	                for (int i=0;i<nbr;i++){
+	                for (i=0;i<nbr;i++){
 	                	Scanner j = new Scanner(System.in); int k = j.nextInt();
 	                	tab[i]=k; }
-	                 TriVec(tab);
+	                 tab=TriVec(tab);
+	                 for (i=0;i<tab.length;i++){System.out.println(tab[i]);}
 			          break;
 	            case (2):
 	            	System.out.println("le nombre d'elements du 1er vecteur");
@@ -118,11 +123,11 @@ public class VectorHelper {
 	            if (nb1==nb2){
 	            	int[] tab1 = new int[nb1];int[] tab2 = new int[nb2];
 	            	System.out.println(" Remplir le 1er vect");
-	            	for (int i=0;i<nb1;i++){
+	            	for ( i=0;i<nb1;i++){
 	      	            		Scanner e= new Scanner(System.in);
 	            		int ee = e.nextInt(); tab1[i]=ee;}
 	            	System.out.println(" Remplir le 2eme vect");
-	            	for (int i=0;i<nb1;i++){
+	            	for ( i=0;i<nb1;i++){
 	            		
 	            		Scanner e= new Scanner(System.in);
 	            		int ee = e.nextInt(); tab2[i]=ee;}
@@ -135,7 +140,7 @@ public class VectorHelper {
 	            Scanner nbv= new Scanner(System.in); 
 	            int n = nbv.nextInt(); int[] tab1 = new int[n];
 	            System.out.println(" Remplir le  vect");
-            	for (int i=0;i<n;i++){
+            	for ( i=0;i<n;i++){
       	            		Scanner e= new Scanner(System.in);
             		int ee = e.nextInt(); tab1[i]=ee;}
             	inverse (tab1);
@@ -146,7 +151,7 @@ public class VectorHelper {
 	            Scanner nbm= new Scanner(System.in); 
 	            int m = nbm.nextInt(); int[] tab2 = new int[m];
 	            System.out.println(" Remplir le  vect");
-            	for (int i=0;i<m;i++){
+            	for ( i=0;i<m;i++){
       	            		Scanner e= new Scanner(System.in);
             		int ee = e.nextInt(); tab2[i]=ee;}
             	minmax(tab2);
