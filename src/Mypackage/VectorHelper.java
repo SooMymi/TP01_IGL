@@ -49,14 +49,16 @@ public class VectorHelper {
 		
 		  // une exception si les deux vecteurs ont des tailles differentes
 		 
-		public static  void somme(int[] tab1 , int[] tab2) throws TDiffException{
+		public static  int somme(int[] tab1 , int[] tab2) throws TDiffException{
 			if (tab1.length != tab2.length) {
 				throw new TDiffException();
 			} else {
-				int somme = 0; int i;
-				for (i=0;i<tab1.length;i++){somme = somme+tab1[i];}
-				for (i=0;i<tab2.length;i++){somme = somme+tab2[i];}
-				System.out.println("la somme des elements >> " +somme ); }}
+				int som = 0; int i;
+				for (i=0;i<tab1.length;i++){som = som+tab1[i];}
+				for (i=0;i<tab2.length;i++){som = som+tab2[i];}
+				//System.out.println("la somme des elements >> " +som );
+				return som;}
+			}
 		
 		
 		/**
@@ -65,15 +67,15 @@ public class VectorHelper {
 		 * le vecteur dont les elements seront inverses
 		 */
 		
-		public static void inverse(int[] tab){
+		public static int[] inverse(int[] tab){
 			int i=0 ,j=(tab.length-1),t,k;
 			while (i<j){t=tab[i];
 			tab[i]=tab[j];
 			tab[j]=t;
 			i++;j--;
 			}
-			for (i=0;i<tab.length;i++){System.out.println(tab[i]);}
-			//return tab;
+			//for (i=0;i<tab.length;i++){System.out.println(tab[i]);}
+			return tab;
 			}
 		
 		
@@ -128,10 +130,10 @@ public class VectorHelper {
 	            		int ee = e.nextInt(); tab1[i]=ee;}
 	            	System.out.println(" Remplir le 2eme vect");
 	            	for ( i=0;i<nb1;i++){
-	            		
 	            		Scanner e= new Scanner(System.in);
 	            		int ee = e.nextInt(); tab2[i]=ee;}
-	            	   somme(tab1 ,tab2);
+	            	   int som= somme(tab1 ,tab2);
+	            	   System.out.println("la somme = "+som);
 	            }else throw new TDiffException();
 	            	break;
 	            case (3):
@@ -143,7 +145,9 @@ public class VectorHelper {
             	for ( i=0;i<n;i++){
       	            		Scanner e= new Scanner(System.in);
             		int ee = e.nextInt(); tab1[i]=ee;}
-            	inverse (tab1);
+            	
+            	int[] tab3= inverse (tab1);
+            	for (i=0;i<tab3.length;i++){System.out.println(tab3[i]);}
 	            break;
 	            
 	            case (4):  
