@@ -20,12 +20,12 @@ public class testsTpIGL {
 	public void TestTri(){
 		
 	    Arrays.sort(Tabtest2);
-		boolean resultat = Arrays.equals(Tabtest2,Mypackage.VectorHelper.TriVec(Tabtest));
+		boolean resultat = Arrays.equals(Tabtest,Mypackage.VectorHelper.TriVec(Tabtest));
 		Assert.assertTrue("dvrait retourner vrai ", resultat);
 	}
 	@Test //(expected = TDiffException.class)
 	public void TestSomme() throws TDiffException{
-		int[] tab1 ={2,5}, tab2={3,1};
+		int[] tab1 ={2,5}, tab2={3,1,9};
 	    boolean resultat = false;
 	    if (11==(Mypackage.VectorHelper.somme(tab1, tab2)))resultat =true;
 		Assert.assertTrue("dvrait retourner 3+1+2+5=11 et génére une excaption si les tailles sont differentes", resultat);

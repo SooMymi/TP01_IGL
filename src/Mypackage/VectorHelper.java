@@ -77,7 +77,7 @@ public class VectorHelper {
 			//for (i=0;i<tab.length;i++){System.out.println(tab[i]);}
 			return tab;
 			}
-		
+		//lkfh
 		
 		/**
 		 *Obtenir simultanement le minimum et le maximum d un vecteur 
