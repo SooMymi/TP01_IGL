@@ -85,10 +85,12 @@ public class VectorHelper {
 		 *le latbleau dans lequel on cherche le min et le max*/
 		
 
-		public static void minmax(int[] tab){
-			int min=tab[0],max=tab[0],i;
+		public static int[] minmax(int[] tab){
+			int min=tab[0],max=tab[0],i; int[] tab1= new int[2];
 			for(i=0;i<tab.length;i++){if (tab[i]<min) min=tab[i]; if(tab[i]>max) max=tab[i]; }
-			System.out.println(" le min >>  "+min );System.out.println(" le max >>  "+max );
+			tab1[0]=min;tab1[1]=max;
+			//System.out.println(" le min >>  "+min );System.out.println(" le max >>  "+max );
+			return tab1;
 			}
 		
 
@@ -152,13 +154,14 @@ public class VectorHelper {
 	            
 	            case (4):  
 	            	System.out.println("le nombre d'elements du vecteur");
-	            Scanner nbm= new Scanner(System.in); 
+	            Scanner nbm= new Scanner(System.in); int[] tab5;
 	            int m = nbm.nextInt(); int[] tab2 = new int[m];
 	            System.out.println(" Remplir le  vect");
             	for ( i=0;i<m;i++){
       	            		Scanner e= new Scanner(System.in);
             		int ee = e.nextInt(); tab2[i]=ee;}
-            	minmax(tab2);
+            	tab5= minmax(tab2);
+            	System.out.println(" le min >>  "+tab5[0] );System.out.println(" le max >>  "+tab5[1] );
 	            	break;
 	            case (5):  break;
 	        }}

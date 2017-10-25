@@ -8,9 +8,14 @@ import org.junit.Assert;
 import org.junit.Test; // ajouter la JUinit 
 
 import vh.TDiffException;
-
+/**
+ * classe dans la quelle tt les tess des fcts seront faits
+ * @author SAADOUN Soumia
+ * @version 2.0**/
 public class testsTpIGL {
-	int[] Tabtest = {5,9,3,8,1,6,2};int[] Tabtest2 = {5,9,3,8,1,6,2}, Tabtest3={2,6,1,8,3,9,5};
+	int[] Tabtest = {5,9,3,8,1,6,2};int[] Tabtest2 = {5,9,3,8,1,6,2}, Tabtest3={2,6,1,8,3,9,5},Tabtest4={1,9};
+	/**
+	 * teste la fct de tri **/
 	@Test
 	public void TestTri(){
 		
@@ -31,6 +36,13 @@ public class testsTpIGL {
 	    boolean resultat =Arrays.equals(Tabtest2,Mypackage.VectorHelper.inverse(Tabtest3));
 	    Assert.assertTrue("devrait retourner vrai", resultat);
 	}
+	
+	@Test 
+	public void TestMinMax(){
+	    boolean resultat =Arrays.equals(Tabtest4,Mypackage.VectorHelper.minmax(Tabtest3));
+	    Assert.assertTrue("devrait retourner vrai", resultat);
+	}
+	
 	
 
 }
